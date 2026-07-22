@@ -3,7 +3,6 @@
     margin:0;
     padding: 0;
 }
-
 :root{
     --primary:#111827;
     --accent:#10b981;
@@ -13,60 +12,207 @@
     --font-main:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
 }
-
 body{
     font-family:var(--font-main);
     color:var(--text);
     line-height:1.6;
     background: var(--white);
 }
-
+header{
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .navbar{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background-color:var(--primary);
+    background:var(--primary);
+    
 }
-
 .logo{
     font-size: 28px;
     font-weight:bold;
     color:var(--white);
 }
-
 .nav-link{
     list-style:none;
+    display: flex;
     gap:30px;
 }
-
 .nav-link a{
     text-decoration: none;
     color:var(--white);
     font-weight:500;
     font-size: 1rem;
 }
-
 .nav-link a:hover{
     color:var(--accent);
 }
-
 #hero{
-    background: var(--light);
-    color: var(--text);
-    padding: 10px;
+    background:linear-gradient(170deg, var(--primary),#2E86AB);
+    color: #F4F6F8;
+    text-align: center;
+    padding: 60px;
+    padding-bottom: 30px;
 }
-
 .hero-section h1{
     font-size:45px;
     margin-bottom:20px;
 }
+.hero-button{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.hero-button a{
+    text-decoration: none;
+    color: var(--white);
+    margin-top: 5px;
+}
+.hero-button a:hover{
+    color: var(--accent);
+}
+.menu-toggle{
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
 
-#about{
+.about-section{
     background-color: var(--white);
     padding: 20px;
 }
-
-#about h2,p{
+.about-section h2,p{
     font-family: var(--font-main);
     line-height: 1.6;
-    color: var(--text);
 }
+
+.skill-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 20px;
+    margin-top:40px ;
+}
+.skill-item{
+    background-color: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px
+}
+.project-card{
+    background-color: var(--primary);
+    border-radius: 16px;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+.project-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.project-card a{
+    text-decoration: none;
+    color: var(--accent);
+}
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.btn-primary{
+    background-color: var(--accent);
+    color: var(--white);
+}
+.btn-primary:hover{
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+section{
+    padding: 80px 5%T;
+}
+section h2{
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+section h2::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.contact-section{
+    max-width: 400px;
+    margin: 0 auto;
+}
+.form-group{
+    margin-bottom: 24px ;
+}
+.form-group label{
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+.form-group input, .form-group textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.site-footer{
+    background-color: var(--primary);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 40px 5%;
+}
+.site-footer a{
+    text-decoration: none;
+    color: rgba(255,255,255,0.8);
+}
+
+/* For a Mobile it is default */
+/* For a Tablet */
+@media (min-width:768px) {
+    .projects-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For a Desktop */
+@media (min-width:1024px) {
+    .projects-grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+

@@ -52,9 +52,11 @@ header{
     color:var(--accent);
 }
 #hero{
-    background:linear-gradient(135deg, var(--primary),#2E86AB);
+    background:linear-gradient(170deg, var(--primary),#2E86AB);
     color: #F4F6F8;
     text-align: center;
+    padding: 60px;
+    padding-bottom: 30px;
 }
 .hero-section h1{
     font-size:45px;
@@ -165,6 +167,16 @@ section h2::after{
 }
 .hero-button{
     animation: fadeinup  0.8s ease 0.2s both;
+    margin-top: 10px;
+    gap: 20px;
+}
+.hero-button a{
+    text-decoration: none;
+    color: var(--white);
+    margin: 0 10px;
+}
+.hero-button a:hover{
+    color: var(--accent);
 }
 .hero-section{
     animation: fadeinup  0.8s ease 0.2s both;
@@ -210,6 +222,7 @@ section h2::after{
 }
 
 .menu-toggle{
+    display: none;
     background: none;
     border: none;
     color: white;
